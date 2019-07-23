@@ -9,7 +9,8 @@ public class God {
         Scanner in = new Scanner(System.in);
         while(proverka){
             try {
-                System.out.println("Какое животное добавить 1 - кот 2 - собака 3 - лягушка 4 - вывести список животного 5 - выход");
+                System.out.println("Какое животное добавить 1 - кот 2 - собака 3 - лягушка " +
+                        "4 - вывести список животного 5 добавить в группу 6 - выход");
                 n=in.nextInt();
                 switch (n){
                     case 1 :
