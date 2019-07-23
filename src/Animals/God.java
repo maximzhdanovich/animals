@@ -40,10 +40,13 @@ public class God {
                         }
                         break;
                     case 5 :
-                        Noah.addtosquad(Cat.cats);
+                        try {Noah.addtosquad(Cat.cats);
                         Noah.addtosquad(Dog.dogs);
                         Noah.addtosquad(Frog.frogs);
-                        System.out.println(Noah.squad);
+                        System.out.println(Noah.squad);}
+                        catch (IndexOutOfBoundsException e){
+                            System.out.println("Недостаточкно животных");
+                        }
                         break;
                         case 6 :
                         proverka = false;
