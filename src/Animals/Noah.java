@@ -2,27 +2,54 @@ package Animals;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-class Noah implements Comparator<Animal> {
-    static List <Animal> squad=new ArrayList<>();
-    @Override
-    public int compare(Animal o1, Animal o2) {
-        if(o1.getYear()>o2.getYear())
-            return 1;
-        else if(o1.getYear()<o2.getYear())
-            return -1;
-        else return 0;
+class Noah {
+    List<Animal> squard = new ArrayList<>();
+    private int numberofcats = 0;
+    private int numberofdogs = 0;
+    private int numberoffrogs = 0;
+
+    public List<Animal> addtoSquard(List<Animal> animals) {
+        animals=sortbyage(animals);
+        for (Animal animal : animals) {
+            switch (animal.getType()) {
+                case CAT:
+                    if (numberofcats < 2) {
+                        squard.add(animal);
+                        numberofcats++;
+                    }
+                    break;
+                case DOG:
+                    if (numberofdogs < 2) {
+                        squard.add(animal);
+                        numberofdogs++;
+                    }
+                    break;
+                case FROG:
+                    if (numberoffrogs < 2) {
+                        squard.add(animal);
+                        numberoffrogs++;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        return this.squard;
+
     }
 
-    public static void sort(List<? extends Animal> animal){
-        Collections.sort(animal, new Noah());
-        System.out.println(animal.toString());
+    public List<Animal> sortbyage(List<Animal> animals) {
+        Collections.sort(animals, (o1, o2) -> {
+            if (o1.getYear()>o2.getYear())
+                return 1;
+            else if (o1.getYear()<o2.getYear())
+                return -1;
+            else return 0;
+        });
+    return animals;
     }
 
-    public static void addtosquad (List<? extends Animal> animals){
-        squad.add(animals.get(0));
-        squad.add(animals.get(1));
-    }
 }

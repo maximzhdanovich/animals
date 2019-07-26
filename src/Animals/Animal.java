@@ -5,31 +5,37 @@ import java.util.Scanner;
 public class Animal {
     private String name;
     private int year;
+    private TypeOfAnimals type;
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                '}';
+    public Animal(TypeOfAnimals type) {
+        this.type = type;
+        Scanner in =new Scanner(System.in);
+        System.out.println("input name");
+        name=in.nextLine();
+        System.out.println("input year");
+        year=in.nextInt();
     }
 
-    public void setParametеrs() {
-        System.out.println("Введите имя животного");
-        Scanner in = new Scanner(System.in);
-        this.name = in.nextLine();
-        System.out.println("Введите возраст животного");
-        this.year=in.nextInt();
-    }
-
-    public static void sound(){
-        System.out.println("Животное что-то произности");
-    }
 
     public int getYear() {
         return year;
     }
-    public String getName() {
-        return name;
+
+    public TypeOfAnimals getType() {
+        return type;
     }
+
+    @Override
+    public String toString() {
+        return type +
+                "{name='" + name + '\'' +
+                ", year=" + year +
+                '}';
+    }
+
+    public void makesound(){
+        System.out.println("Животное что-то произности");
+    }
+
 }
 
