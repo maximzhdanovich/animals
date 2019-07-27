@@ -12,7 +12,11 @@ public class World {
             Scanner in = new Scanner(System.in);
             String type = in.nextLine().toUpperCase();
             if (!type.equals("1"))
-                animalList.add(new God().create(TypeOfAnimals.valueOf(type)));
+                try{
+                animalList.add(new God().create(TypeOfAnimals.valueOf(type)));}
+            catch (IllegalArgumentException e){
+                System.out.println("Неизвестный зверь");
+            }
             else break;
         }
     }

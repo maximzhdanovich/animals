@@ -6,38 +6,15 @@ import java.util.List;
 
 class Noah {
     List<Animal> squard = new ArrayList<>();
-    private int numberofcats = 0;
-    private int numberofdogs = 0;
-    private int numberoffrogs = 0;
 
     public List<Animal> addtoSquard(List<Animal> animals) {
-
         animals=sortbyage(animals);
         for (int i=0;i<animals.size();i++) {
             TypeOfAnimals type=animals.get(i).gettype();
-            switch (type) {
-                case CAT:
-                    if (numberofcats < 2) {
-                        squard.add(animals.get(i));
-                        numberofcats++;
-                    }
-                    break;
-                case DOG:
-                    if (numberofdogs < 2) {
-                        squard.add(animals.get(i));
-                        numberofdogs++;
-                    }
-                    break;
-                case FROG:
-                    if (numberoffrogs < 2) {
-                        squard.add(animals.get(i));
-                        numberoffrogs++;
-                    }
-                    break;
-                default:
-                    break;
+            if (type.numberof<2) {
+                squard.add(animals.get(i));
+                type.numberof++;
             }
-
         }
         return this.squard;
 

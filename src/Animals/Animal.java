@@ -1,6 +1,10 @@
 package Animals;
 
 public abstract class Animal {
+    public Animal(){
+        setName();
+        setYear();
+    }
     private String name;
     private int year;
     public void setName(String name) {

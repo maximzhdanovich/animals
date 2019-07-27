@@ -2,23 +2,15 @@ package Animals;
 
 public class God {
    public Animal create(TypeOfAnimals typeOfAnimals){
-   Animal animal=null;
        switch (typeOfAnimals){
-           case CAT:{
-               animal =new Cat();
-               break;}
-           case DOG: {
-               animal = new Dog();
-               break;
-           }
-           case FROG:{
-               animal =new Frog();
-               break;
-           }
-           default: break;
-
+           case CAT:
+               return new Cat();
+           case DOG:
+               return new Dog();
+           case FROG:
+               return new Frog();
+           default: return null;
+        }
    }
-   return animal;
-}
 }
 
