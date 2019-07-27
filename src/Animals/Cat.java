@@ -1,10 +1,18 @@
 package Animals;
 
 public class Cat extends Animal{
-    public Cat(TypeOfAnimals type) {
-        super(type);
+    private final TypeOfAnimals TYPE=TypeOfAnimals.CAT;
+
+    public Cat(){
+        super();
     }
-    public void makesound(){
-        System.out.println("Кошка мяукает");
+    @Override
+    public String makesound(){
+        return "мяу-мяу";
+    }
+
+    @Override
+    public TypeOfAnimals gettype() {
+        return TYPE;
     }
 }

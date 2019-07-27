@@ -1,41 +1,27 @@
 package Animals;
 
-import java.util.Scanner;
-
-public class Animal {
+public abstract class Animal {
     private String name;
     private int year;
-    private TypeOfAnimals type;
-
-    public Animal(TypeOfAnimals type) {
-        this.type = type;
-        Scanner in =new Scanner(System.in);
-        System.out.println("input name");
-        name=in.nextLine();
-        System.out.println("input year");
-        year=in.nextInt();
+    public void setName(String name) {
+        this.name = name;
     }
 
+    public void setYear(int year) {
+        this.year = year;
+    }
 
     public int getYear() {
         return year;
     }
 
-    public TypeOfAnimals getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return type +
-                "{name='" + name + '\'' +
-                ", year=" + year +
-                '}';
-    }
+    public abstract String makesound();
 
-    public void makesound(){
-        System.out.println("Животное что-то произности");
-    }
+    public abstract TypeOfAnimals gettype();
 
 }
 

@@ -2,11 +2,12 @@ package Animals;
 
 public class Frog extends Animal{
 
-    public Frog(TypeOfAnimals type) {
-        super(type);
+    public String makesound() {
+        return  "ква ква";
     }
 
-    public void makesound() {
-        System.out.println("Лягушка квакает");
+    @Override
+    public TypeOfAnimals gettype() {
+        return null;
     }
 }

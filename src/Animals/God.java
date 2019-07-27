@@ -5,20 +5,19 @@ public class God {
    Animal animal=null;
        switch (typeOfAnimals){
            case CAT:{
-               animal =new Cat(typeOfAnimals);
+               animal =new Cat();
                break;}
            case DOG: {
-               animal = new Dog(typeOfAnimals);
+               animal = new Dog();
                break;
            }
            case FROG:{
-               animal =new Frog(typeOfAnimals);
+               animal =new Frog();
                break;
            }
            default: break;
 
    }
-   animal.makesound();
    return animal;
 }
 }

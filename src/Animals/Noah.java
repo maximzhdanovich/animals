@@ -11,24 +11,26 @@ class Noah {
     private int numberoffrogs = 0;
 
     public List<Animal> addtoSquard(List<Animal> animals) {
+
         animals=sortbyage(animals);
-        for (Animal animal : animals) {
-            switch (animal.getType()) {
+        for (int i=0;i<animals.size();i++) {
+            TypeOfAnimals type=animals.get(i).gettype();
+            switch (type) {
                 case CAT:
                     if (numberofcats < 2) {
-                        squard.add(animal);
+                        squard.add(animals.get(i));
                         numberofcats++;
                     }
                     break;
                 case DOG:
                     if (numberofdogs < 2) {
-                        squard.add(animal);
+                        squard.add(animals.get(i));
                         numberofdogs++;
                     }
                     break;
                 case FROG:
                     if (numberoffrogs < 2) {
-                        squard.add(animal);
+                        squard.add(animals.get(i));
                         numberoffrogs++;
                     }
                     break;

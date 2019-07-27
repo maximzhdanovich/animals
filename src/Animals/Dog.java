@@ -2,12 +2,13 @@ package Animals;
 
 public class Dog extends Animal {
 
-    public Dog(TypeOfAnimals type) {
-        super(type);
+    public String makesound() {
+        return "гав гав";
     }
 
-    public void makesound() {
-        System.out.println("Собака гавкает");
+    @Override
+    public TypeOfAnimals gettype() {
+        return null;
     }
 }
 
