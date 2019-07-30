@@ -1,20 +1,19 @@
 package Animals;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 class Noah {
-    List<Animal> squard = new ArrayList<>();
+    Map<TypeOfAnimals,Animal[]> squard = new HashMap<>();
 
-    public List<Animal> addtoSquard(List<Animal> animals) {
+    public Map<TypeOfAnimals,Animal[]> addtoSquard(List<Animal> animals) {
         animals=sortbyage(animals);
         for (int i=0;i<animals.size();i++) {
-            TypeOfAnimals type=animals.get(i).gettype();
-            if (type.numberof<2) {
-                squard.add(animals.get(i));
-                type.numberof++;
+            if(squard.containsKey(animals.get(i).gettype())){
+                if(squard.get(TypeOfAnimals.CAT).length==1){
+                    squard.put(animals.get(i).gettype(),new Animal[]{squard.get(animals.get(i).gettype())[0], animals.get(i)});
+                }
             }
+            else squard.put(animals.get(i).gettype(),new Animal[]{animals.get(i)});
         }
         return this.squard;
 

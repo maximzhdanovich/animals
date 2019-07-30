@@ -9,7 +9,8 @@ public class God {
                    return new Dog();
                case FROG:
                    return new Frog();
-                   default: throw new IllegalArgumentException();
+                   default:
+                       throw new IllegalArgumentException();
            }
 
        }

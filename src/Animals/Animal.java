@@ -1,15 +1,10 @@
 package Animals;
 
-import java.util.Scanner;
-
 public abstract class Animal {
-    public Animal(){
-        Scanner in =new Scanner(System.in);
-        setName(in.nextLine());
-        setYear(in.nextInt());
-    }
+
     private String name;
     private int year;
+
     public void setName(String name) {
         this.name = name;
     }
@@ -30,5 +25,12 @@ public abstract class Animal {
 
     public abstract TypeOfAnimals gettype();
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }
 
