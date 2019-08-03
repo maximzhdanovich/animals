@@ -3,31 +3,29 @@ package Animals;
 import java.util.*;
 
 class Noah {
-    Map<TypeOfAnimals,Animal[]> squard = new HashMap<>();
+    List<Animal> squard = new ArrayList<>();
 
-    public Map<TypeOfAnimals,Animal[]> addtoSquard(List<Animal> animals) {
-        animals=sortbyage(animals);
-        for (int i=0;i<animals.size();i++) {
-            if(squard.containsKey(animals.get(i).gettype())){
-                if(squard.get(TypeOfAnimals.CAT).length==1){
-                    squard.put(animals.get(i).gettype(),new Animal[]{squard.get(animals.get(i).gettype())[0], animals.get(i)});
+    public List<Animal> addtoSquard(List<Animal> animals) {
+        TypeOfAnimals typename = null;
+        int numberof = 0;
+        animals = sortbyage(animals);
+        for (int i = 0; i < animals.size(); i++) {
+            if (typename != animals.get(i).gettype()) {
+                typename = animals.get(i).gettype();
+                squard.add(animals.get(i));
+                numberof = 1;
+            } else {
+                if (numberof < 2) {
+                    squard.add(animals.get(i));
+                    numberof++;
                 }
             }
-            else squard.put(animals.get(i).gettype(),new Animal[]{animals.get(i)});
         }
         return this.squard;
-
     }
 
     public List<Animal> sortbyage(List<Animal> animals) {
-        Collections.sort(animals, (o1, o2) -> {
-            if (o1.getYear()>o2.getYear())
-                return 1;
-            else if (o1.getYear()<o2.getYear())
-                return -1;
-            else return 0;
-        });
-    return animals;
+        animals.sort(Comparator.comparing(Animal::gettype).thenComparing(Animal::getYear));
+        return animals;
     }
-
 }

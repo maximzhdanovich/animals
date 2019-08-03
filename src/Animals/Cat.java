@@ -16,4 +16,5 @@ public class Cat extends Animal{
     public TypeOfAnimals gettype() {
         return TYPE;
     }
+
 }

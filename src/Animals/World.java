@@ -10,13 +10,14 @@ public class World {
             Scanner in = new Scanner(System.in);
             String type = in.nextLine().toUpperCase();
             if (!type.equals("1"))
-                try{
-                animalList.add(new God().create(TypeOfAnimals.valueOf(type)));}
-            catch (IllegalArgumentException e){
-                System.out.println("Неизвестный зверь");
-            }
+                try {
+                    animalList.add(new God().create(TypeOfAnimals.valueOf(type)));
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Неизвестный зверь");
+                }
             else break;
         }
+        new Noah().addtoSquard(animalList);
     }
 }
 
