@@ -17,7 +17,6 @@ public class World {
                 }
             else break;
         }
-        new Noah().addtoSquard(animalList);
     }
 }
 
