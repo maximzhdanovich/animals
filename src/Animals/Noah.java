@@ -9,6 +9,7 @@ class Noah {
         Map<TypeOfAnimals, ArrayList<Animal>> sortedGroup = groupbytype(sortbyage(animals));
         int index = 0;
         for (TypeOfAnimals type : TypeOfAnimals.values()) {
+            if (sortedGroup.containsKey(type))
             for (Animal animals1 : sortedGroup.get(type)) {
                 squard.add(animals1);
                 index++;
@@ -17,7 +18,6 @@ class Noah {
             }
             index = 0;
         }
-        System.out.println(squard);
         return squard;
     }
 
@@ -27,7 +27,7 @@ class Noah {
     }
 
     private Map<TypeOfAnimals, ArrayList<Animal>> groupbytype(List<Animal> animals) {
-        Map<TypeOfAnimals, ArrayList<Animal>> group = new HashMap<>();
+        Map<TypeOfAnimals, ArrayList<Animal>> group = new TreeMap<>();
         for (Animal animal : animals) {
             group.putIfAbsent(animal.gettype(), new ArrayList<>());
             group.get(animal.gettype()).add(animal);
