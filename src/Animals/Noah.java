@@ -3,20 +3,12 @@ package Animals;
 import java.util.*;
 
 class Noah {
-    List<Animal> squard = new ArrayList<>();
+    Map<TypeOfAnimals, List<Animal>> squard= new HashMap();
 
-    public List<Animal> addtoSquard(List<Animal> animals, int numberOfAnimal) {
+    public Map<TypeOfAnimals, List<Animal>> addtoSquard(List<Animal> animals, int numberOfAnimal) {
         Map<TypeOfAnimals, ArrayList<Animal>> sortedGroup = groupbytype(sortbyage(animals));
-        int index = 0;
-        for (TypeOfAnimals type : sortedGroup.keySet()) {
-            for (Animal animals1 : sortedGroup.get(type)) {
-                squard.add(animals1);
-                index++;
-                if (index == numberOfAnimal)
-                    break;
-            }
-            index = 0;
-        }
+        for (TypeOfAnimals type : sortedGroup.keySet())
+                squard.put(type,sortedGroup.get(type).subList(0,numberOfAnimal));
         return squard;
     }
 
