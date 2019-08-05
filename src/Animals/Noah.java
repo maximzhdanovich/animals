@@ -8,8 +8,7 @@ class Noah {
     public List<Animal> addtoSquard(List<Animal> animals, int numberOfAnimal) {
         Map<TypeOfAnimals, ArrayList<Animal>> sortedGroup = groupbytype(sortbyage(animals));
         int index = 0;
-        for (TypeOfAnimals type : TypeOfAnimals.values()) {
-            if (sortedGroup.containsKey(type))
+        for (TypeOfAnimals type : sortedGroup.keySet()) {
             for (Animal animals1 : sortedGroup.get(type)) {
                 squard.add(animals1);
                 index++;
