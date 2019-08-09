@@ -3,9 +3,9 @@ package Animals;
 public class Cat extends Animal{
     private final TypeOfAnimals TYPE=TypeOfAnimals.CAT;
 
-    public Cat(){
-        super.setName(Input.inputStringbyconsole());
-        super.setYear(Input.inputNumcerbyconcole());
+    public Cat(int year,String name){
+        super.setName(name);
+        super.setYear(year);
     }
     @Override
     public String makesound(){

@@ -3,9 +3,9 @@ package Animals;
 public class Frog extends Animal{
     private final TypeOfAnimals TYPE=TypeOfAnimals.FROG;
 
-    public Frog(){
-        super.setName(Input.inputStringbyconsole());
-        super.setYear(Input.inputNumcerbyconcole());
+    public Frog(int year,String name){
+        super.setName(name);
+        super.setYear(year);
     }
     @Override
     public String makesound() {

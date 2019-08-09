@@ -3,9 +3,9 @@ package Animals;
 public class Dog extends Animal {
     private final TypeOfAnimals TYPE=TypeOfAnimals.DOG;
 
-    public Dog(){
-        super.setName(Input.inputStringbyconsole());
-        super.setYear(Input.inputNumcerbyconcole());
+    public Dog(int year,String name){
+        super.setName(name);
+        super.setYear(year);
     }
     @Override
     public String makesound() {

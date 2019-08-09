@@ -12,7 +12,7 @@ class Noah {
         return squard;
     }
 
-    public List<Animal> sortbyage(List<Animal> animals) {
+    private List<Animal> sortbyage(List<Animal> animals) {
         animals.sort(Comparator.comparing(Animal::getYear));
         return animals;
     }

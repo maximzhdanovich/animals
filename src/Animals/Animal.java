@@ -27,7 +27,7 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", year=" + year +
                 '}';
