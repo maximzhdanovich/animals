@@ -4,8 +4,8 @@ public class Frog extends Animal{
     private final TypeOfAnimals TYPE=TypeOfAnimals.FROG;
 
     public Frog(int year,String name){
-        super.setName(name);
-        super.setYear(year);
+        setName(name);
+        setYear(year);
     }
     @Override
     public String makesound() {
