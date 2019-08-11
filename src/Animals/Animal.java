@@ -5,11 +5,8 @@ public abstract class Animal {
     private String name;
     private int year;
 
-    public void setName(String name) {
+    public Animal(int year,String name) {
         this.name = name;
-    }
-
-    public void setYear(int year) {
         this.year = year;
     }
 
