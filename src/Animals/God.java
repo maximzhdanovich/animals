@@ -2,33 +2,24 @@ package Animals;
 
 import java.util.Random;
 
-public class God implements IStringSupplier {
+public class God {
+    private StringSupplier animalname = new RandomStringSupplier();
 
     public Animal create(TypeOfAnimals typeOfAnimals) {
-        Random random=new Random();
+        Random random = new Random();
         switch (typeOfAnimals) {
             case CAT:
-                return new Cat(random.nextInt(100)+1,getString());
+                return new Cat(random.nextInt(100) + 1, animalname.getString());
             case DOG:
-                return new Dog(random.nextInt(100)+1,getString());
+                return new Dog(random.nextInt(100) + 1, animalname.getString());
             case FROG:
-                return new Frog(random.nextInt(100)+1,getString());
+                return new Frog(random.nextInt(100) + 1, animalname.getString());
             default:
                 throw new IllegalArgumentException();
         }
     }
 
-    @Override
-    public String getString() {
-        final String characters="ABCDEFGHJKLMNOPQRSTUVWXYZ";
-        int length=new Random().nextInt(10)+1;
-        char[] text = new char[length];
-        for (int i = 0; i < length; i++)
-        {
-            text[i] = characters.charAt(new Random().nextInt(characters.length()));
-        }
-        return new String(text);
-    }
+
 }
 
 

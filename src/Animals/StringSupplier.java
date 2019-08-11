@@ -1,5 +1,5 @@
 package Animals;
 
-public interface IStringSupplier {
+public interface StringSupplier {
     String getString();
 }
