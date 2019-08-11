@@ -7,7 +7,7 @@ import java.util.Random;
 public class World {
     public static void main(String[] args) {
         List<Animal> animalList = new ArrayList<>();
-        God god = new God();
+        God god = new God(new RandomStringSupplier());
         Noah noah = new Noah();
         for (int i = 0; i < 100; i++) {
             animalList.add(god.create(getRandomtype()));
