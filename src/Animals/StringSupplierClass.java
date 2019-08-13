@@ -2,10 +2,10 @@ package Animals;
 
 import java.util.Random;
 
-public class RandomStringSupplier implements StringSupplier {
+public class StringSupplierClass implements StringSupplier {
 
     @Override
-    public String getString() {
+    public String getRandomValue() {
         final String characters = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
         int length = new Random().nextInt(10) + 1;
         char[] text = new char[length];
@@ -14,4 +14,5 @@ public class RandomStringSupplier implements StringSupplier {
         }
         return new String(text);
     }
+
 }

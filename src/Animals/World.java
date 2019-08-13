@@ -2,24 +2,19 @@ package Animals;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class World {
     public static void main(String[] args) {
         List<Animal> animalList = new ArrayList<>();
-        God god = new God(new RandomStringSupplier());
+        God god = new God(new StringSupplierClass());
         Noah noah = new Noah();
+        TypeSupplier type = new TypeSupplierClass();
         for (int i = 0; i < 100; i++) {
-            animalList.add(god.create(getRandomtype()));
+            animalList.add(god.create(type.getRandomValue()));
         }
         System.out.println(noah.addtoSquard(animalList, 2));
     }
 
-    public static TypeOfAnimals getRandomtype(){
-        Random random = new Random();
-        return TypeOfAnimals.values()[random.nextInt(TypeOfAnimals.values().length)];
-
-    }
 }
 
 

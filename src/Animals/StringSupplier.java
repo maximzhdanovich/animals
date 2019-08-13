@@ -1,5 +1,4 @@
 package Animals;
 
-public interface StringSupplier {
-    String getString();
+public interface StringSupplier extends RandomValueSupplier<String> {
 }
